@@ -8,5 +8,5 @@ If you are new to mobile development, the easiest way to get started is with Exp
 - ScrollView
 - Components and lists
 
-![alt text](/assets/components.png)
-![alt text](/assets/Scrollvew.png)
+![](components.png)
+![](Scrollvew.png)
