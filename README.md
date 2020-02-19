@@ -7,6 +7,7 @@ If you are new to mobile development, the easiest way to get started is with Exp
 - State and Events
 - ScrollView
 - Components and lists
+- Model Overlay
 
 <img src="components.png" height="600"> <img src="Scrollview.png" height="600">
 
