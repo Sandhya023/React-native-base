@@ -22,13 +22,14 @@ import { useState } from 'react';
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState('');
+  const [courseGoals, setCourseGoal] = useState([]);
 
   function goalInputHandler(enteredText){
     setEnteredGoal(enteredText);
 
   }
   const addGoalHandler = () => {
-    console.log(enteredGoal);
+    setCourseGoal(currentGoals => [...currentGoals, enteredGoal ]);
   };
 
   return (
@@ -42,6 +43,9 @@ export default function App() {
         value={enteredGoal}/>
         <Button title="ADD" onPress={addGoalHandler}/>
 
+      </View>
+      <View>
+        {courseGoals.map((goal) => <Text>{goal}</Text>)}
       </View>
     </View>
   );
