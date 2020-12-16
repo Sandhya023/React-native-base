@@ -22,13 +22,14 @@ import { useState } from 'react';
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState('');
+  const [courseGoals, setCourseGoal] = useState([]);
 
   function goalInputHandler(enteredText){
     setEnteredGoal(enteredText);
 
   }
   const addGoalHandler = () => {
-    console.log(enteredGoal);
+    setCourseGoal(currentGoals => [...currentGoals, enteredGoal ]);
   };
 
   return (
@@ -43,6 +44,12 @@ export default function App() {
         <Button title="ADD" onPress={addGoalHandler}/>
 
       </View>
+      <ScrollView>
+        {courseGoals.map((goal) => 
+        <View  key={goal}
+        style={styles.listItem}>
+          <Text>{goal}</Text></View>)}
+      </ScrollView>
     </View>
   );
 };
@@ -61,6 +68,13 @@ const styles = StyleSheet.create({
     borderColor: 'black', 
     borderWidth: 1, 
     padding: 10
+  },
+  listItem: {
+    padding: 10,
+    marginVertical: 10,
+    backgroundColor: '#ccc',
+    borderColor: 'black',
+    borderWidth: 1
   }
 
 });
